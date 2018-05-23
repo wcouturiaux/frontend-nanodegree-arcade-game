@@ -38,7 +38,8 @@ Player.prototype.update = function(dt) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var allEnemies = [new Enemy(-150, 380, 200), new Enemy(-350, 240, 100), new Enemy(-500, 130, 250), new Enemy(-700, 280, 400)];
+var player = new Player(200, 450);
 
 
 // This listens for key presses and sends the keys to your
