@@ -5,6 +5,8 @@ var Enemy = function(x,y,speed) {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+
+    //Assign image, x & y positions and speed to enemy object
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
@@ -18,6 +20,8 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
+
+    //When Enemy reaches width of canvas restart it at left side
     if (this.x >= ctx.canvas.width){
         this.x = -50;
     }
@@ -32,19 +36,33 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function(x,y) {
+    //Assign image, x & y positions to player object
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
 };
 
 Player.prototype.update = function(dt) {
-
+    if (this.x <= 0){
+        this.x = 0;
+    }
+    else if (this.x>=400) {
+        this.x = 400;
+    }
+    if (this.y < 0){
+        this.y = 375;
+    }
+    else if (this.y>375){
+        this.y =375;
+    }
 };
 
+//Draw the Player on the screen.
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//Move player position x(L/R) or y(U/D) based on key input
 Player.prototype.handleInput = function(key){
     switch (key){
         case 'left':
@@ -52,7 +70,7 @@ Player.prototype.handleInput = function(key){
             break;
 
         case 'up':
-            this.y -= 75;
+            this.y -= 85;
             break;
 
         case 'right':
@@ -60,10 +78,10 @@ Player.prototype.handleInput = function(key){
             break;
 
         case 'down':
-            this.y += 75;
+            this.y += 85;
             break;
         }
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
