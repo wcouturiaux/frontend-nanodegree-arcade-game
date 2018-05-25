@@ -50,7 +50,8 @@ Player.prototype.update = function(dt) {
         this.x = 400;
     }
     if (this.y < 0){
-        this.y = 375;
+        this.y = -50
+        setTimeout(function() {player.y = 375;}, 500);
     }
     else if (this.y>375){
         this.y =375;
