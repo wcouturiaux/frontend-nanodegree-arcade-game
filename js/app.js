@@ -103,3 +103,13 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+var x = document.getElementById('resetBtn');
+x.onclick = function changeDisplay(){document.getElementById('winner').style.display = 'none'};
+
+
+
+
+
+
