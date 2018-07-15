@@ -88,8 +88,16 @@ var Engine = (function(global) {
                 }
             }
         }
+
+        function winGame(){
+                document.getElementById('winner').style.display = 'block';
+            }
+
         updateEntities(dt);
         checkCollisions();
+        if (player.y === -50){
+            winGame();
+        }
     }
 
     /* This is called by the update function and loops through all of the
