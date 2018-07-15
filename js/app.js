@@ -50,7 +50,7 @@ Player.prototype.update = function(dt) {
         this.x = 400;
     }
     if (this.y < 0){
-        this.y = -50
+        this.y = -50;
         setTimeout(function() {player.y = 375; player.x =200;}, 500);
     }
     else if (this.y>375){
@@ -87,7 +87,7 @@ Player.prototype.handleInput = function(key){
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy(-350, 290, 100), new Enemy(-500, 205, 250), new Enemy(-700, 120, 400), new Enemy(-100, 35, 200)];
+var allEnemies = [new Enemy(-350, 205, 100), new Enemy(-500, 205, 250), new Enemy(-700, 120, 400), new Enemy(-100, 35, 200)];
 var player = new Player(200, 375);
 
 
